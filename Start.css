@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+#myVideo {
+    background-size: cover;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+.start-game{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.start-game span a{
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.title{
+    top:-30%;
+}
+.title span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: rgb(243, 243, 243);
+    background: rgb(233,159,159);
+background: linear-gradient(45deg, 
+rgba(233,159,159,1) 0%, rgba(174,212,159,1) 29%, 
+rgba(162,235,167,1) 45%, rgba(136,234,200,1) 73%, 
+rgba(173,172,231,1) 100% )repeat 0% 0% / 300% 100%;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.easy a{
+    margin-left: -30%;
+}
+.easy span a{
+    background: rgb(252,252,252);
+background: linear-gradient(45deg, rgba(252,252,252,1) 0%, rgba(186,227,169,1) 29%, rgba(103,228,111,1) 45%, rgba(76,236,64,1) 73%, rgba(8,238,12,1) 100%);
+}
+
+.hard{
+    margin-left: 30%;
+}
+.hard span a{
+    background: rgb(233,151,151);
+background: linear-gradient(45deg, rgba(233,151,151,1) 0%, rgba(224,90,90,1) 29%, rgba(218,47,47,1) 45%, rgba(231,23,23,1) 73%, rgba(46,4,4,1) 100%);
+}

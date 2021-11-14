@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial Rounded MT;
+}
+.start-game{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(3, 169, 244, 0.9);
+}
+.start-game span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+/* <!-- Player Information - Start --> */
+.player-info{
+    width: 1080px;
+    /* margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0; */
+    margin: 20px auto 0;
+    background-color: rgb(252, 246, 238);
+    padding: 20px;
+    font-size: 24px;
+    color: crimson;
+    overflow: hidden;
+    border: 2px solid dodgerblue;
+}
+
+.player-info .player-name{
+    float: left;
+    width: 50%;
+}
+.player-info .tries{
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+/* <!-- Player Information - End --> */
+
+/* <!-- Memory Game Blocks Container - Start --> */
+.memory-game{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    /* margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto; */
+    margin: 20px auto;
+}
+
+/* CSS 3D Card Design with RGB EFFECT TUT - Start*/
+.memory-game .food-block{
+    height: 200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    /* margin-top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px; */
+    margin: 0 10px 20px;    
+    box-shadow: 5px 5px 15px rgba(7, 7, 7, 0.9);
+    transition: transform 0.7s;
+}
+.rgb::after{
+    content: '?';
+    color: #414040;
+    font-size: 180px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(45deg,
+    #030000 0%, 
+    #4b0808 10%,
+    #930f0f 20%,
+    #e71717 30%, 
+    #cc9044 40%,
+    #d56634 50%, 
+    #df3a24 60%, 
+    #e71717 70%, 
+    #930f0f 80%, 
+    #4b0808 90%, 
+    #030000 100%)
+    repeat 0% 0% / 300% 100%;
+    position: absolute;
+    inset: -3px;
+    animation: rgb 10s linear infinite;
+}
+@keyframes rgb{
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+/* CSS 3D Card Design with RGB EFFECT TUT - End*/
+
+.memory-game .food-block .front{
+    line-height: 200px;
+}
+
+.memory-game .food-block .back{
+    background-color: #607D8B;;
+    transform: rotateY(180deg);
+}
+.memory-game .food-block .back img{
+    width: 140px;
+    height: 140px;
+    margin-top: 30px;
+}
+
+.memory-game .food-block .food{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 3px solid dodgerblue;
+}
+
+.memory-game .food-block.is-flipped,
+.memory-game .food-block.has-match{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+.memory-game.no-clicking{
+    pointer-events: none;
+}
